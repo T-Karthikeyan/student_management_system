@@ -1,7 +1,8 @@
+const host = "https://redesigned-adventure-5wx6x97xr5p3vj5g-8000.app.github.dev/"
 function getdata() {
   const tbody = document.querySelector("tbody");
   tbody.innerHTML = "";
-  fetch("http://localhost:8000/api/student_list", { method: "GET" })
+  fetch(host+"api/student_list", { method: "GET" })
     .then((res) => res.json())
     .then((data) => {
       if (data.length) {
@@ -63,7 +64,7 @@ addstudent.addEventListener("click", (event) => {
   if (check(sname, sdept, scgpa)) {
     const form = document.getElementById("form");
     const data = new FormData(form);
-    fetch("http://localhost:8000/api/add_student", {
+    fetch(host+"api/add_student", {
       method: "POST",
       body: data,
     })
@@ -80,7 +81,7 @@ const remove = document.getElementById("remove");
 remove.addEventListener("click", (event) => {
   event.preventDefault();
   if (confirm("Are you sure to delete all the records in the table?")) {
-    fetch("http://localhost:8000/api/drop_students", { method: "GET" })
+    fetch(host+"api/drop_students", { method: "GET" })
       .then(() => {
         alert("All the students are removed!");
         getdata();
@@ -95,7 +96,7 @@ const sdelete = (sid, sname) => {
       "Do you want to delete the student -> " + sname + " with id=" + sid + "?"
     )
   ) {
-    const api = "http://localhost:8000/api/delete_student/" + sid;
+    const api = host+"api/delete_student/" + sid;
     fetch(api, { method: "POST" })
       .then(() => {
         getdata();
@@ -122,7 +123,7 @@ const updates = (sid) => {
     data.append("name", sname);
     data.append("dept", sdept);
     data.append("cgpa", scgpa);
-    fetch("http://localhost:8000/api/update_student", {
+    fetch(host+"api/update_student", {
       method: "POST",
       body: data,
     })
