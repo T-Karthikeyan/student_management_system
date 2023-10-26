@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  postgresDB:
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: karthikeyan
+      POSTGRES_PASSWORD: karthikeyan
+      POSTGRES_DB: studentdb
+
+  backend:
+    build: ./studentdb-crud-api
+    ports:
+      - 8000:8000
+    depends_on:
+      - postgresDB
+  
+  frontend:
+    build: ./studentdb-crud
+    ports:
+      - 5000:5000
+    depends_on:
+      - backend

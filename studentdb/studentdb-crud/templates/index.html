@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Database</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div id="main">
+      <div id="inputdiv">
+        <h3>STUDENT ENTRY</h3>
+        <form id="form" name="form">
+          <input type="hidden" id="sid" name="sid" required />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Name"
+            required
+          />
+          <input
+            type="text"
+            id="dept"
+            name="dept"
+            placeholder="Department"
+            required
+          />
+          <input
+            type="number"
+            step="0.01"
+            id="cgpa"
+            name="cgpa"
+            placeholder="Cgpa"
+            required
+          /><br />
+          <button id="submit" name="submit">Add Student</button>
+          <button type="reset">Reset</button>
+          <button id="remove">Remove all</button>
+        </form>
+      </div>
+
+      <div id="displaydiv">
+        <button id="getdata" onclick="getdata();">Get Data</button>
+        <h3>STUDENT DETAILS</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>STUDENT ID</th>
+              <th>STUDENT NAME</th>
+              <th>DEPARTMENT</th>
+              <th>CGPA</th>
+              <th>DELETE</th>
+              <th>EDIT</th>
+              <th>UPDATE</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js')}}"></script>
+  </body>
+</html>

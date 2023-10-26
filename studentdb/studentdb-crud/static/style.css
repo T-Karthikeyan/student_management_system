@@ -1,0 +1,77 @@
+body {
+  background-color: lightcyan;
+  padding: 25px;
+}
+#main {
+  margin-inline: auto;
+  background-color: rgb(247, 248, 248);
+  min-height: 100vh;
+  border-radius: 20px;
+  padding: 25px;
+}
+#inputdiv {
+  margin-inline: auto;
+  background-color: lightblue;
+  padding: 3px 20px 20px 20px;
+  width: 35%;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 35px;
+}
+#inputdiv input {
+  width: 70%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  margin-inline: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#inputdiv button {
+  background-color: forestgreen;
+  border: 1px solid green;
+  border-radius: 5px;
+  padding: 9px;
+  margin: 5px;
+  width: 20%;
+}
+#displaydiv {
+  text-align: center;
+}
+#displaydiv button {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  margin-inline-end: 10px;
+  border: 1px solid whitesmoke;
+}
+#displaydiv #getdata {
+  width: 30%;
+  background-color: forestgreen;
+}
+.del {
+  background-color: red;
+}
+.update {
+  background-color: gold;
+}
+.done {
+  background-color: forestgreen;
+}
+table {
+  width: 70%;
+}
+table,
+th,
+td {
+  border: 1px solid black;
+  padding: 7px;
+  background-color: lightblue;
+  margin-inline: auto;
+}
+tbody input {
+  background-color: whitesmoke;
+  border-radius: 5px;
+  padding: 5px;
+  color: black;
+}

@@ -1,0 +1,4 @@
+# Used to ignore the listed files from any level of the directories.
+**/Pipfile*
+**/Dockerfile*
+**/.dockerignore
